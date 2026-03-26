@@ -68,15 +68,14 @@ h1, h2, h3 {
 }
 
 .nav-container {
-    max-width: 1400px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start; /* pastikan logo di kiri */
+    gap: 3rem; /* jarak antara logo dan menu */
 }
 
 .logo img {
-    height: 50px;   /* sesuaikan ukuran logo */
+    height: 50px; /* ukuran logo */
     width: auto;
     display: block;
 }
