@@ -1,3 +1,4 @@
+
 // script.js - WireBloom Interactive Features
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -68,16 +69,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 🔥 SMOOTH SCROLL FOR NAV LINKS
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetSection = document.querySelector(this.getAttribute('href'));
-        if(targetSection){
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); // UBAH offset manual
-        }
-    });
-});
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const targetPosition = targetSection.offsetTop - 80;
                 
-
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
     // 🔥 PRODUCT HOVER EFFECTS
     document.querySelectorAll('.product-card').forEach((card, index) => {
         card.addEventListener('mouseenter', function() {
@@ -119,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+
     // 🔥 PROGRESS BAR ON SCROLL (Subtle)
     window.addEventListener('scroll', function() {
         const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
