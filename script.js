@@ -13,14 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.toggle('no-scroll');
     });
     
-// 🔥 MOBILE MENU TOUCH FIX (Android)
-hamburger.addEventListener('touchstart', function(e){
-    e.preventDefault(); // mencegah double event click + touch
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
-});
-
     // Close mobile menu on link click
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
