@@ -125,27 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 🔥 PARALLAX EFFECT FOR HERO
-    window.addEventListener('mousemove', function(e) {
-        const hero = document.querySelector('.hero');
-        const rect = hero.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 20;
-        const rotateY = (centerX - x) / 20;
-        
-        hero.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-    
-    // Reset parallax on mouseleave
-    document.querySelector('.hero').addEventListener('mouseleave', function() {
-        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-    });
-    
     // 🔥 PROGRESS BAR ON SCROLL (Subtle)
     window.addEventListener('scroll', function() {
         const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
