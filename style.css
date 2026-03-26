@@ -68,31 +68,30 @@ h1, h2, h3 {
 }
 
 .nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* pastikan logo di kiri */
-    gap: 3rem; /* jarak antara logo dan menu */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo kiri, menu kanan */
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo img {
-    height: 50px; /* ukuran logo */
-    width: auto;
-    display: block;
+  height: 50px;   /* ukuran logo */
+  width: auto;
+  display: block;
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
+  display: flex;
+  gap: 2rem;
+  list-style: none;
 }
 
-.nav-links a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    position: relative;
-    transition: all 0.3s ease;
+.nav-links li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .nav-links a::before {
