@@ -68,22 +68,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 🔥 SMOOTH SCROLL FOR NAV LINKS
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const targetPosition = targetSection.offsetTop - 80;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetSection = document.querySelector(this.getAttribute('href'));
+        if(targetSection){
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); // UBAH offset manual
+        }
     });
-    
+});
+                
+
     // 🔥 PRODUCT HOVER EFFECTS
     document.querySelectorAll('.product-card').forEach((card, index) => {
         card.addEventListener('mouseenter', function() {
