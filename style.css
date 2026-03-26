@@ -559,23 +559,6 @@ section {
 }
 
 @media (max-width: 480px) {
-/* Hamburger di atas semua */
-#hamburger {
-    position: relative; /* atau fixed */
-    z-index: 9999;
-    cursor: pointer;
-}
-
-/* Nav links overlay */
-#navLinks.active {
-    pointer-events: auto; /* pastikan bisa diklik */
-}
-
-/* Hero / section lain */
-.hero, .custom-section {
-    pointer-events: auto; /* default, jangan none */
-}
-
     .hero-content {
         padding: 0 1rem;
     }
