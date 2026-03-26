@@ -68,31 +68,36 @@ h1, h2, h3 {
 }
 
 .nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* logo kiri, menu kanan */
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo img {
-  height: 50px;   /* ukuran logo */
-  width: auto;
-  display: block;
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--gold), var(--soft-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
 }
 
-.nav-links li a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 500;
-}
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
 .nav-links a::before {
@@ -512,12 +517,6 @@ section {
 }
 
 @media (max-width: 768px) {
-   #hamburger {
-        z-index: 9999;
-    }
-    #navLinks {
-        z-index: 9998;
-
     .hamburger {
         display: flex;
     }
